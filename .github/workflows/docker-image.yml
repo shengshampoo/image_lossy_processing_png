@@ -28,8 +28,8 @@ jobs:
         docker run --cidfile=builder.cid builder true
         docker cp "$(cat builder.cid):work/artifact/." .
 
-    - name: Upload processing jpg image packages
+    - name: Upload processing png image packages
       uses: actions/upload-artifact@v4
       with:
-        name: image_jpg-${{ matrix.os }}
+        name: image_png-${{ matrix.os }}
         path: ./*.tar.xz
